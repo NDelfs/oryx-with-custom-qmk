@@ -404,6 +404,7 @@ tap_dance_action_t tap_dance_actions[] = {
 // Custom QMK here
 const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
 
-const key_override_t *key_overrides[] = {
-	&delete_key_override
+const key_override_t **key_overrides = (const key_override_t *[]){
+	&delete_key_override,
+	NULL // Null terminate the array of overrides!
 };
