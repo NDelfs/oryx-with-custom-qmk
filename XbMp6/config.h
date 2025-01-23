@@ -9,7 +9,7 @@
 #define QUICK_TAP_TERM 0
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
-#define SERIAL_NUMBER "XbMp6/No5lg0"
+#define SERIAL_NUMBER "XbMp6/pja3Mb"
 #define LAYER_STATE_16BIT
 #define COMBO_COUNT 13
 
