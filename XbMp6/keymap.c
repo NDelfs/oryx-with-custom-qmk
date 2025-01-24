@@ -3,9 +3,6 @@
 
 enum custom_keycodes {
   RGB_SLD = EZ_SAFE_RANGE,
-  HSV_172_255_255,
-  HSV_86_255_128,
-  HSV_27_255_255,
 };
 
 
@@ -22,26 +19,16 @@ enum tap_dance_codes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
-    KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_PSCR,                                        TD(DANCE_4),    KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           TG(6),
-    CW_TOGG,        KC_Q,           KC_W,           LT(5,KC_E),     KC_R,           KC_T,           TD(DANCE_0),                                    TG(5),          KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,
-    KC_BSPC,        KC_A,           LT(3,KC_S),     MT(MOD_LSFT, KC_D),TD(DANCE_1),    KC_G,                                                                           KC_H,           TD(DANCE_5),    MT(MOD_RSFT, KC_K),TD(DANCE_6),    KC_SCLN,        MT(MOD_LGUI, KC_QUOTE),
-    KC_LEFT_SHIFT,  MT(MOD_LCTL, KC_Z),KC_X,           KC_C,           KC_V,           KC_B,           TD(DANCE_2),                                    TG(2),          KC_N,           KC_M,           KC_COMMA,       KC_DOT,         MT(MOD_RCTL, KC_SLASH),KC_RIGHT_SHIFT,
+    KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_PSCR,                                        TD(DANCE_4),    KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           TG(5),
+    CW_TOGG,        KC_Q,           KC_W,           LT(4,KC_E),     KC_R,           KC_T,           TD(DANCE_0),                                    TG(4),          KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,
+    KC_BSPC,        KC_A,           LT(2,KC_S),     MT(MOD_LSFT, KC_D),TD(DANCE_1),    KC_G,                                                                           KC_H,           TD(DANCE_5),    MT(MOD_RSFT, KC_K),TD(DANCE_6),    KC_SCLN,        MT(MOD_LGUI, KC_QUOTE),
+    KC_LEFT_SHIFT,  MT(MOD_LCTL, KC_Z),KC_X,           KC_C,           KC_V,           KC_B,           TD(DANCE_2),                                    TG(1),          KC_N,           KC_M,           KC_COMMA,       KC_DOT,         MT(MOD_RCTL, KC_SLASH),KC_RIGHT_SHIFT,
     KC_LEFT_CTRL,   KC_GRAVE,       KC_TRANSPARENT, KC_LEFT_SHIFT,  TD(DANCE_3),                                                                                                    MT(MOD_RSFT, KC_BSPC),KC_LEFT,        KC_UP,          KC_DOWN,        KC_RIGHT,
                                                                                                     KC_ENTER,       KC_LEFT_GUI,    LGUI(LCTL(KC_LEFT)),LGUI(LCTL(KC_RIGHT)),
                                                                                                                     KC_F7,          TD(DANCE_7),
                                                                                     KC_SPACE,       KC_TAB,         KC_F5,          KC_F10,         KC_DELETE,      KC_ENTER
   ),
   [1] = LAYOUT_ergodox_pretty(
-    KC_ESCAPE,      KC_TRANSPARENT, KC_TRANSPARENT, KC_LABK,        KC_RABK,        KC_GRAVE,       KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_KP_SLASH,    KC_NUM,
-    KC_TRANSPARENT, KC_EXLM,        KC_AT,          KC_LCBR,        KC_RCBR,        KC_PIPE,        KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_EQUAL,       KC_7,           KC_8,           KC_9,           KC_KP_ASTERISK, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_HASH,        KC_DLR,         KC_LPRN,        KC_RPRN,        KC_MINUS,                                                                       KC_PERC,        KC_4,           KC_5,           KC_6,           KC_KP_MINUS,    KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_CIRC,        KC_LBRC,        KC_RBRC,        KC_UNDS,        KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_AMPR,        KC_1,           KC_2,           KC_3,           KC_KP_PLUS,     KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                                                                                 KC_KP_0,        KC_KP_DOT,      KC_COMMA,       KC_EQUAL,       KC_TRANSPARENT,
-                                                                                                    RGB_MODE_FORWARD,HSV_172_255_255,RGB_TOG,        RGB_SLD,
-                                                                                                                    HSV_86_255_128, KC_TRANSPARENT,
-                                                                                    RGB_VAD,        RGB_VAI,        HSV_27_255_255, KC_TRANSPARENT, RGB_HUD,        RGB_HUI
-  ),
-  [2] = LAYOUT_ergodox_pretty(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_CAPS,        KC_TRANSPARENT, KC_TRANSPARENT, KC_E,           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_S,           KC_D,           KC_F,           KC_TRANSPARENT,                                                                 KC_TRANSPARENT, KC_J,           KC_K,           KC_L,           KC_TRANSPARENT, KC_TRANSPARENT,
@@ -49,9 +36,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_GRAVE,       KC_I,           KC_M,           KC_LEFT_ALT,                                                                                                    KC_TRANSPARENT, KC_RIGHT_CTRL,  KC_LEFT,        KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_DELETE,      KC_TRANSPARENT
+                                                                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
   ),
-  [3] = LAYOUT_ergodox_pretty(
+  [2] = LAYOUT_ergodox_pretty(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_LABK,        KC_RABK,        KC_GRAVE,       KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_KP_SLASH,    KC_NUM,
     KC_TRANSPARENT, KC_EXLM,        KC_TRANSPARENT, KC_LCBR,        KC_RCBR,        KC_PIPE,        KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_EQUAL,       KC_KP_7,        KC_KP_8,        KC_KP_9,        KC_KP_ASTERISK, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_HASH,        KC_TRANSPARENT, KC_LPRN,        KC_RPRN,        KC_MINUS,                                                                       KC_PERC,        KC_KP_4,        KC_KP_5,        KC_KP_6,        KC_KP_MINUS,    KC_TRANSPARENT,
@@ -61,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
   ),
-  [4] = LAYOUT_ergodox_pretty(
+  [3] = LAYOUT_ergodox_pretty(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_LABK,        KC_RABK,        KC_GRAVE,       KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_KP_SLASH,    KC_NUM,
     KC_TRANSPARENT, KC_EXLM,        KC_TILD,        KC_LCBR,        KC_RCBR,        KC_PIPE,        KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_EQUAL,       KC_KP_7,        KC_KP_8,        KC_TRANSPARENT, KC_KP_ASTERISK, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_HASH,        KC_DLR,         KC_LPRN,        KC_RPRN,        KC_MINUS,                                                                       KC_PERC,        KC_KP_4,        KC_KP_5,        KC_TRANSPARENT, KC_KP_MINUS,    KC_TRANSPARENT,
@@ -71,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
   ),
-  [5] = LAYOUT_ergodox_pretty(
+  [4] = LAYOUT_ergodox_pretty(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_PAGE_UP,     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_UP,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                                                 KC_HOME,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_END,         KC_TRANSPARENT,
@@ -81,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
   ),
-  [6] = LAYOUT_ergodox_pretty(
+  [5] = LAYOUT_ergodox_pretty(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_F,           KC_P,           KC_G,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_J,           KC_L,           KC_U,           KC_Y,           KC_SCLN,        KC_BSLS,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_R,           MT(MOD_LSFT, KC_S),KC_T,           KC_D,                                                                           KC_H,           KC_N,           MT(MOD_RSFT, KC_E),KC_I,           KC_O,           KC_QUOTE,
@@ -96,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 const uint16_t PROGMEM combo0[] = { KC_1, KC_Q, COMBO_END};
 const uint16_t PROGMEM combo1[] = { KC_2, KC_W, COMBO_END};
-const uint16_t PROGMEM combo2[] = { KC_3, LT(5,KC_E), COMBO_END};
+const uint16_t PROGMEM combo2[] = { KC_3, LT(4,KC_E), COMBO_END};
 const uint16_t PROGMEM combo3[] = { KC_4, KC_R, COMBO_END};
 const uint16_t PROGMEM combo4[] = { KC_5, KC_T, COMBO_END};
 const uint16_t PROGMEM combo5[] = { KC_6, KC_Y, COMBO_END};
@@ -105,7 +92,7 @@ const uint16_t PROGMEM combo7[] = { KC_8, KC_I, COMBO_END};
 const uint16_t PROGMEM combo8[] = { KC_9, KC_O, COMBO_END};
 const uint16_t PROGMEM combo9[] = { KC_0, KC_P, COMBO_END};
 const uint16_t PROGMEM combo10[] = { KC_1, KC_A, COMBO_END};
-const uint16_t PROGMEM combo11[] = { KC_2, LT(3,KC_S), COMBO_END};
+const uint16_t PROGMEM combo11[] = { KC_2, LT(2,KC_S), COMBO_END};
 const uint16_t PROGMEM combo12[] = { KC_BSPC, KC_A, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
@@ -141,33 +128,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case TOGGLE_LAYER_COLOR:
       if (record->event.pressed) {
         disable_layer_color ^= 1;
-      }
-      return false;
-    case HSV_172_255_255:
-      if (record->event.pressed) {
-        #ifdef RGBLIGHT_ENABLE
-          rgblight_enable();
-          rgblight_mode(1);
-          rgblight_sethsv(172,255,255);
-        #endif
-      }
-      return false;
-    case HSV_86_255_128:
-      if (record->event.pressed) {
-        #ifdef RGBLIGHT_ENABLE
-          rgblight_enable();
-          rgblight_mode(1);
-          rgblight_sethsv(86,255,128);
-        #endif
-      }
-      return false;
-    case HSV_27_255_255:
-      if (record->event.pressed) {
-        #ifdef RGBLIGHT_ENABLE
-          rgblight_enable();
-          rgblight_mode(1);
-          rgblight_sethsv(27,255,255);
-        #endif
       }
       return false;
   }
@@ -218,21 +178,21 @@ uint8_t layer_state_set_user(uint8_t state) {
           rgblight_sethsv_noeeprom(139,229, rgblight_config.val);
         }
         break;
-      case 2:
+      case 1:
         if(!disable_layer_color) {
           rgblight_enable_noeeprom();
           rgblight_mode_noeeprom(1);
           rgblight_sethsv_noeeprom(0,240, rgblight_config.val);
         }
         break;
-      case 3:
+      case 2:
         if(!disable_layer_color) {
           rgblight_enable_noeeprom();
           rgblight_mode_noeeprom(1);
           rgblight_sethsv_noeeprom(86,178, rgblight_config.val);
         }
         break;
-      case 4:
+      case 3:
         if(!disable_layer_color) {
           rgblight_enable_noeeprom();
           rgblight_mode_noeeprom(1);
@@ -499,8 +459,8 @@ void dance_6_finished(tap_dance_state_t *state, void *user_data) {
     dance_state[6].step = dance_step(state);
     switch (dance_state[6].step) {
         case SINGLE_TAP: register_code16(KC_L); break;
-        case SINGLE_HOLD: layer_on(4); break;
-        case DOUBLE_TAP: register_code16(RALT(KC_L)); break;
+        case SINGLE_HOLD: layer_on(3); break;
+        case DOUBLE_TAP: register_code16(KC_P); break;
         case DOUBLE_SINGLE_TAP: tap_code16(KC_L); register_code16(KC_L);
     }
 }
@@ -510,9 +470,9 @@ void dance_6_reset(tap_dance_state_t *state, void *user_data) {
     switch (dance_state[6].step) {
         case SINGLE_TAP: unregister_code16(KC_L); break;
         case SINGLE_HOLD:
-          layer_off(4);
+          layer_off(3);
         break;
-        case DOUBLE_TAP: unregister_code16(RALT(KC_L)); break;
+        case DOUBLE_TAP: unregister_code16(KC_P); break;
         case DOUBLE_SINGLE_TAP: unregister_code16(KC_L); break;
     }
     dance_state[6].step = 0;
