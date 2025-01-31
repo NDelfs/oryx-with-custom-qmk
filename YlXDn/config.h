@@ -13,3 +13,6 @@
 #define LAYER_STATE_8BIT
 #define COMBO_COUNT 11
 
+
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+
