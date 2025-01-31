@@ -18,9 +18,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     CW_TOGG,        KC_Q,           KC_W,           LT(4,KC_E),     KC_R,           KC_T,           TD(DANCE_0),                                    TG(4),          KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,
     KC_BSPC,        KC_A,           LT(2,KC_S),     MT(MOD_LSFT, KC_D),MT(MOD_RALT, KC_F),KC_G,                                                                           KC_H,           MT(MOD_RALT, KC_J),MT(MOD_RSFT, KC_K),LT(3,KC_L),     KC_SCLN,        KC_QUOTE,
     KC_LEFT_SHIFT,  MT(MOD_LCTL, KC_Z),KC_X,           KC_C,           KC_V,           KC_B,           TD(DANCE_1),                                    TG(1),          KC_N,           KC_M,           KC_COMMA,       KC_DOT,         MT(MOD_RCTL, KC_SLASH),KC_RIGHT_SHIFT,
-    KC_LEFT_CTRL,   KC_GRAVE,       KC_TRANSPARENT, KC_LEFT_SHIFT,  KC_LEFT_ALT,                                                                                                    KC_BSPC,        KC_LEFT,        KC_UP,          KC_DOWN,        KC_RIGHT,
+    KC_LEFT_CTRL,   KC_GRAVE,       KC_TRANSPARENT, KC_TRANSPARENT, KC_LEFT_ALT,                                                                                                    KC_BSPC,        KC_LEFT,        KC_UP,          KC_DOWN,        KC_RIGHT,
                                                                                                     KC_ENTER,       KC_LEFT_GUI,    LGUI(LCTL(KC_LEFT)),LGUI(LCTL(KC_RIGHT)),
-                                                                                                                    KC_F7,          KC_RIGHT_CTRL,
+                                                                                                                    KC_F7,          KC_TRANSPARENT,
                                                                                     KC_SPACE,       KC_TAB,         KC_F5,          KC_F10,         KC_DELETE,      KC_ENTER
   ),
   [1] = LAYOUT_ergodox_pretty(
@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_Z,           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_UP,          KC_TRANSPARENT,
     KC_TRANSPARENT, KC_GRAVE,       KC_I,           KC_M,           KC_LEFT_ALT,                                                                                                    KC_TRANSPARENT, KC_RIGHT_CTRL,  KC_LEFT,        KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                                                    KC_TRANSPARENT, KC_TRANSPARENT,
+                                                                                                                    KC_TRANSPARENT, KC_F12,
                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [2] = LAYOUT_ergodox_pretty(
