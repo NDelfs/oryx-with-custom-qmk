@@ -11,15 +11,16 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(12, KC_M)
+#define DUAL_FUNC_0 LT(13, KC_F3)
+#define DUAL_FUNC_1 LT(12, KC_G)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_moonlander(
-    KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_PSCR,                                        DUAL_FUNC_0,    KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,       
-    CW_TOGG,        KC_Q,           KC_W,           LT(2, KC_E),    KC_R,           KC_T,           KC_TRANSPARENT,                                 LGUI(LCTL(KC_LEFT)),KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,        
-    KC_BSPC,        KC_A,           LT(1, KC_S),    MT(MOD_LSFT, KC_D),MT(MOD_RALT, KC_F),KC_G,           KC_MS_JIGGLER_TOGGLE,                                                                LGUI(LCTL(KC_RIGHT)),KC_H,           MT(MOD_RALT, KC_J),MT(MOD_RSFT, KC_K),LT(1, KC_L),    KC_SCLN,        KC_QUOTE,       
+    KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_PSCR,                                        DUAL_FUNC_1,    KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,       
+    CW_TOGG,        KC_Q,           KC_W,           LT(2, KC_E),    KC_R,           KC_T,           KC_MS_JIGGLER_TOGGLE,                                LGUI(LCTL(KC_LEFT)),KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,        
+    KC_BSPC,        KC_A,           LT(1, KC_S),    MT(MOD_LSFT, KC_D),MT(MOD_RALT, KC_F),KC_G,           KC_F5,                                                                          LGUI(LCTL(KC_RIGHT)),KC_H,           MT(MOD_RALT, KC_J),MT(MOD_RSFT, KC_K),LT(1, KC_L),    KC_SCLN,        KC_QUOTE,       
     KC_LEFT_SHIFT,  MT(MOD_LCTL, KC_Z),KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         MT(MOD_RCTL, KC_SLASH),KC_RIGHT_SHIFT, 
-    KC_LEFT_CTRL,   KC_HYPR,        KC_MEH,         KC_ENTER,       KC_LEFT_ALT,    KC_F7,                                                                                                          KC_ESCAPE,      KC_BSPC,        KC_LEFT,        KC_UP,          KC_DOWN,        KC_RIGHT,       
+    KC_LEFT_CTRL,   KC_HYPR,        KC_MEH,         KC_LEFT_ALT,    KC_F10,         DUAL_FUNC_0,                                                                                                    KC_ESCAPE,      KC_BSPC,        KC_LEFT,        KC_UP,          KC_DOWN,        KC_RIGHT,       
     KC_SPACE,       KC_TAB,         MT(MOD_LGUI, KC_F5),                KC_F10,         KC_DELETE,      KC_ENTER
   ),
   [1] = LAYOUT_moonlander(
@@ -162,6 +163,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
 
     case DUAL_FUNC_0:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(KC_ENTER);
+        } else {
+          unregister_code16(KC_ENTER);
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(KC_F7);
+        } else {
+          unregister_code16(KC_F7);
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_1:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_PAUSE);
